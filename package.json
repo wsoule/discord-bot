@@ -4,7 +4,7 @@
   "description": "Discord bot v1",
   "main": "index.js",
   "scripts": {
-    "test": "foo1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
     "dotenv": "^14.3.2",
-    "eslint": "^8.7.0"
+    "eslint": "^8.7.0",
+    "nodemon": "^2.0.15"
   }
 }
