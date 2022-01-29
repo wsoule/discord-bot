@@ -5,11 +5,11 @@ const fs = require('fs');
 
 const commands = [];
 let commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-commandFiles = commandFiles.slice(commandFiles.length - 1);
-
+// console.log(commandFiles);
+// commandFiles = commandFiles.slice(commandFiles.length - 1);
 // Place your client and guild ids here
 const clientId = '935612949341544478';
-const guildId = '844337536720961566';
+// const guildId = '844337536720961566';
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -20,14 +20,14 @@ const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
 	try {
-		console.log('commands', commands);
+		// console.log('commands', commands.length);
 		console.log('Started refreshing application (/) commands.');
 
 		await rest.put(
-			Routes.applicationCommands(clientId, guildId),
+			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
-
+		// console.log('commands', commands);
 		console.log('Successfully reloaded application (/) commands.');
 	} catch (error) {
 		console.error(error);

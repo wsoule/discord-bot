@@ -5,6 +5,6 @@ module.exports = {
 		.setName('ass')
 		.setDescription('asks the age old question'),
 	async execute(interaction) {
-		await interaction.reply(`ass or tits? ${interaction.user.tag}`);
-	},
+		await interaction.reply(`ass or tits? ${interaction.user}`), console.log(interaction.user);
+	}
 };
